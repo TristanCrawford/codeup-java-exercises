@@ -1,7 +1,15 @@
+import java.util.Scanner;
+
 public class ControlFlowExercises {
     public static void main(String[] args) {
-        for (int i = 1; i < 100; i++) {
-            System.out.println(((i % 5) == 0 && (i % 3) == 0) ? "FizzBuzz" : ((i % 3) == 0) ? "Fizz" : ((i % 5) == 0) ? "Buzz" : Integer.toString(i));
+        Scanner in = new Scanner(System.in);
+
+        System.out.print("What Number Would You Like To Go Up To? ");
+        int upTo = in.nextInt();
+
+        System.out.println("\nHere Is Your Table!\n\nnumber | squared | cubed\n------ | ------- | -----");
+        for (int i = 1; i <= upTo; i++) {
+            System.out.printf("%d\t   | %d\t\t | %d\n", i, (int) Math.pow(i, 2), (int) Math.pow(i, 3));
         }
     }
 }
