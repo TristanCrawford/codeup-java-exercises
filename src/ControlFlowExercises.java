@@ -4,12 +4,21 @@ public class ControlFlowExercises {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        System.out.print("What Number Would You Like To Go Up To? ");
-        int upTo = in.nextInt();
+        do {
 
-        System.out.println("\nHere Is Your Table!\n\nnumber | squared | cubed\n------ | ------- | -----");
-        for (int i = 1; i <= upTo; i++) {
-            System.out.printf("%d\t   | %d\t\t | %d\n", i, (int) Math.pow(i, 2), (int) Math.pow(i, 3));
-        }
+            System.out.println();
+
+            System.out.print("Enter A Numerical Grade: ");
+            int g = in.nextInt();
+
+            System.out.printf("Letter Grade Is: %c\n", (g > 87) ? 'A' : (g > 80) ? 'B' : (g > 67) ? 'C' : ( g > 60 ) ? 'D' : 'F');
+
+            System.out.println();
+
+            System.out.print("Continue Entering Grades? (Y/N) ");
+
+        } while(in.next().toLowerCase().equals("y"));
+
+        System.out.println("Thanks!");
     }
 }
