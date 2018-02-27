@@ -16,7 +16,7 @@ public class Input {
     }
 
     public boolean yesNo() {
-        String s = getString().toLowerCase();
+        String s = this.input.next().toLowerCase();
         return "y".equals( s ) || s.contains("yes");
     }
 
