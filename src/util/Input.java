@@ -26,7 +26,12 @@ public class Input {
     }
 
     public int getInt() {
-        return this.input.nextInt();
+        try {
+            return Integer.valueOf(this.input.nextLine());
+        } catch(NumberFormatException e) {
+            System.out.print("Invalid Input, Try Again: ");
+            return getInt();
+        }
     }
 
     public int getInt(boolean prompt) {
@@ -45,7 +50,12 @@ public class Input {
     }
 
     public double getDouble() {
-        return this.input.nextDouble();
+        try {
+            return Double.valueOf(this.input.nextLine());
+        } catch(NumberFormatException e) {
+            System.out.print("Invalid Input, Try Again: ");
+            return getDouble();
+        }
     }
 
     public double getDouble(boolean prompt) {
@@ -61,6 +71,26 @@ public class Input {
     public double getDouble(double min, double max, boolean prompt) {
         System.out.printf("Enter a Double between %f and %f: ", min, max);
         return getDouble();
+    }
+
+    public int getBinary() {
+        try {
+            System.out.print("Enter A Binary Number: ");
+            return Integer.valueOf(this.input.nextLine(), 2);
+        } catch (NumberFormatException e) {
+            System.out.print("Invalid Binary, try again: ");
+            return getBinary();
+        }
+    }
+
+    public int getHex() {
+        try {
+            System.out.print("Enter A Hex Number: ");
+            return Integer.valueOf(this.input.nextLine(), 16);
+        } catch (NumberFormatException e) {
+            System.out.print("Invalid Hex, try again: ");
+            return getHex();
+        }
     }
 
     public Input() {
