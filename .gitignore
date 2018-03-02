@@ -3,7 +3,9 @@
 *.iml
 
 # Java
-.project
 .class
-.classpath
 out/*
+
+# Eclim
+.project
+.classpath
