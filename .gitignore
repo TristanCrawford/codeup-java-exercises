@@ -3,5 +3,7 @@
 *.iml
 
 # Java
+.project
 .class
+.classpath
 out/*
