@@ -16,8 +16,8 @@ public class Input {
     }
 
     public boolean yesNo() {
-        String s = this.input.next().toLowerCase();
-        return "y".equals( s ) || s.contains("yes");
+        String s = this.input.nextLine();
+        return "y".equalsIgnoreCase(s) || "yes".equalsIgnoreCase(s);
     }
 
     public boolean yesNo(boolean prompt) {
@@ -27,7 +27,7 @@ public class Input {
 
     public int getInt() {
         try {
-            return Integer.valueOf(this.input.nextLine());
+            return Integer.parseInt(this.input.nextLine());
         } catch(NumberFormatException e) {
             System.out.print("Invalid Input, Try Again: ");
             return getInt();
@@ -51,7 +51,7 @@ public class Input {
 
     public double getDouble() {
         try {
-            return Double.valueOf(this.input.nextLine());
+            return Double.parseDouble(this.input.nextLine());
         } catch(NumberFormatException e) {
             System.out.print("Invalid Input, Try Again: ");
             return getDouble();
