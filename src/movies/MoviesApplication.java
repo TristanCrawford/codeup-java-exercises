@@ -28,9 +28,10 @@ public class MoviesApplication {
             System.out.println("3 - View Movies in the 'Drama' Category");
             System.out.println("4 - View Movies in the 'Horror' Category");
             System.out.println("5 - View Movies in the 'Sci-Fi' Category");
+            System.out.println("6 - Add A Movie");
 
             System.out.print("Enter Your Choice: ");
-            int option = input.getInt(0, 5);
+            int option = input.getInt(0, 6);
 
             switch (option) {
                 case 0:
@@ -59,6 +60,9 @@ public class MoviesApplication {
                     for (Movie movie : movies)
                         if ("scifi".equals(movie.getCategory()))
                             System.out.printf("%s -- %s\n", movie.getName(), movie.getCategory());
+                    break;
+                case 6:
+                    addMovie();
                     break;
                 default:
                     System.out.println("Invalid Option");
