@@ -20,7 +20,7 @@ public class ContactManager {
                 System.out.printf("%-9s | %-14s\n", c[0], c[1]);
             }
         } catch (IOException e) {
-            System.out.println("FUCK");
+            System.out.println("Oh noes.");
         }
     }
 }
