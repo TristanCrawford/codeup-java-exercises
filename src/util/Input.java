@@ -15,6 +15,11 @@ public class Input {
         return getString();
     }
 
+    public String getString(String prompt) {
+        System.out.print(prompt);
+        return getString();
+    }
+
     public boolean yesNo() {
         String s = this.input.nextLine();
         return "y".equalsIgnoreCase(s) || "yes".equalsIgnoreCase(s);
@@ -22,6 +27,11 @@ public class Input {
 
     public boolean yesNo(boolean prompt) {
         System.out.print("(Yes/No): ");
+        return yesNo();
+    }
+
+    public boolean yesNo(String prompt) {
+        System.out.print(prompt);
         return yesNo();
     }
 
@@ -39,6 +49,11 @@ public class Input {
         return getInt();
     }
 
+    public int getInt(String prompt) {
+        System.out.print(prompt);
+        return getInt();
+    }
+
     public int getInt(int min, int max) {
         int n = getInt();
         return ( n >= min && n <= max ) ? n : getInt(min, max);
@@ -46,6 +61,11 @@ public class Input {
 
     public int getInt(int min, int max, boolean prompt) {
         System.out.printf("Enter an Integer between %d and %d: ", min, max);
+        return getInt(min, max);
+    }
+
+    public int getInt(int min, int max, String prompt) {
+        System.out.printf(prompt, min, max);
         return getInt(min, max);
     }
 
@@ -62,6 +82,11 @@ public class Input {
         System.out.print("Enter A Double: ");
         return getDouble();
     }
+    
+    public double getDouble(String prompt) {
+        System.out.print(prompt);
+        return getDouble();
+    }
 
     public double getDouble(double min, double max) {
         double n = getDouble();
@@ -70,6 +95,11 @@ public class Input {
 
     public double getDouble(double min, double max, boolean prompt) {
         System.out.printf("Enter a Double between %f and %f: ", min, max);
+        return getDouble();
+    }
+    
+    public double getDouble(double min, double max, String prompt) {
+        System.out.printf(prompt, min, max);
         return getDouble();
     }
 
